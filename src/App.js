@@ -5,14 +5,10 @@ function App() {
   const [userMessage, setUserMessage] = useState('');
   const [chatbotMessage, setChatbotMessage] = useState('');
   
-  console.log('ENV:', process.env)
-
   const backendUrl = process.env.REACT_APP_BACKEND_URL
   
   const sendMessage = async (event) => {
-    console.log('HOLA')
     try {
-      console.log('backendUrl:', backendUrl);
       const response = await fetch(`${backendUrl}/chat`, {
         method: "POST",
         headers: {
