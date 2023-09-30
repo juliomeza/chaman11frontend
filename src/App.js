@@ -6,11 +6,11 @@ function App() {
   const [chatbotMessage, setChatbotMessage] = useState('');
 
   const backendUrl = process.env.REACT_APP_BACKEND_URL
-
-
-
+  
   const sendMessage = async (event) => {
+    console.log('HOLA')
     try {
+      console.log('backendUrl:', backendUrl);
       const response = await fetch(`${backendUrl}/chat`, {
         method: "POST",
         headers: {
@@ -29,7 +29,7 @@ function App() {
     }
     catch (error) {
       console.error(error);
-      setChatbotMessage("Sorry, something went wrong")
+      setChatbotMessage("Sorry!, something went wrong")
     }
   }
 
