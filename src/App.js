@@ -4,6 +4,8 @@ import './App.css';
 function App() {
   const [userMessage, setUserMessage] = useState('');
   const [chatbotMessage, setChatbotMessage] = useState('');
+  
+  console.log('ENV:', process.env)
 
   const backendUrl = process.env.REACT_APP_BACKEND_URL
   
